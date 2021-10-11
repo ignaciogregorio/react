@@ -1,0 +1,11 @@
+.carrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 15px;
+  margin-top: -40px;
+}
+/*# sourceMappingURL=cartwidget.css.map */
