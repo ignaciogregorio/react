@@ -130,9 +130,8 @@
     color: white;
   }
   .peakyNav .peakyMenu a :hover {
-    background-color: white;
-    border: 3px solid white;
-    color: black;
+    border-bottom: 3px solid white;
+    color: white;
     font-weight: bolder;
   }
   .peakyNav .peakyMenu li {
@@ -143,15 +142,14 @@
     font-size: 14px;
   }
   .peakyNav .peakyMenu .peakyMenu__Productos:hover {
-    background-color: white;
-    border: 3px solid white;
-    color: black;
+    border-bottom: 3px solid white;
+    color: white;
     font-weight: bolder;
   }
-  .peakyNav .peakyMenu .peakyMenu__Productos:hover .peakySubMenu {
+  .peakyNav .peakyMenu .peakyMenu__Productos:hover .peakyDropdown {
     display: block;
   }
-  .peakyNav .peakyMenu .peakySubMenu {
+  .peakyNav .peakyMenu .peakyDropdown {
     position: absolute;
     background-color: black;
     color: white;
@@ -159,12 +157,12 @@
     display: none;
     text-align: center;
   }
-  .peakyNav .peakyMenu .peakySubMenu .subMenu1:hover {
+  .peakyNav .peakyMenu .peakyDropdown .subMenu:hover {
     border-bottom: 2px solid white;
     width: 100%;
     color: white;
   }
-  .peakyNav .peakyMenu .subMenu1 {
+  .peakyNav .peakyMenu .subMenu {
     display: block;
     margin-left: -30px;
     padding: 10px;

@@ -26,10 +26,10 @@ export const Navbar = () => {
                     <a href="index.html"><li>Home</li></a>
                     <a href="index.html"><li>Nosotros</li></a>
                     <li className='peakyMenu__Productos'>Productos
-                        <ul className='peakySubMenu'>
-                            <li className='subMenu1'>Vinos</li>
-                            <li className='subMenu1'>Whisky</li>
-                            <li className='subMenu1'>Tabacco</li>
+                        <ul className='peakyDropdown'>
+                            <li className='subMenu'>Vinos</li>
+                            <li className='subMenu'>Whisky</li>
+                            <li className='subMenu'>Tabacco</li>
                         </ul>
                     </li>
                     <a href="index.html"><li>Contacto</li></a>

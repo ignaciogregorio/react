@@ -106,9 +106,8 @@
             a{
                 color: white;
                 :hover{
-                    background-color: rgb(255, 255, 255);
-                    border: 3px solid white;
-                    color: black;
+                    border-bottom: 3px solid white;
+                    color: white;
                     font-weight:bolder;
                 }
             }
@@ -120,29 +119,28 @@
                 font-size: 14px;
             }
             .peakyMenu__Productos:hover{
-                background-color: rgb(255, 255, 255);
-                border: 3px solid white;
-                color: black;
+                border-bottom: 3px solid white;
+                color: white;
                 font-weight:bolder;
-                .peakySubMenu{
+                .peakyDropdown{
                     display: block;
 
                 }
             }
-            .peakySubMenu{
+            .peakyDropdown{
                 position: absolute;
                 background-color: black;
                 color: white;
                 margin-top: 1px;
                 display: none;
                 text-align: center;
-                .subMenu1:hover{
+                .subMenu:hover{
                     border-bottom: 2px solid white;
                     width: 100%;
                     color: white
                 }
             }
-            .subMenu1{
+            .subMenu{
                 display: block;
                 margin-left: -30px;
                 padding: 10px;

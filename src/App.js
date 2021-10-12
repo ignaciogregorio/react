@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-          <Itemlistcontainer greeting='By Order of the Peaky Blinders'/>
+        <Itemlistcontainer greeting='By Order of the Peaky Blinders'/>
 
       </header>
     </div>
