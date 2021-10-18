@@ -8,4 +8,12 @@
   margin-right: 15px;
   margin-top: -40px;
 }
+
+.carrito .icon {
+  background-color: white;
+  height: 2rem;
+  width: 2rem;
+  mask: url(..//..//img/cart-plus-solid.svg) no-repeat center center;
+  -webkit-mask: url(..//..//img/cart-plus-solid.svg) no-repeat center center;
+}
 /*# sourceMappingURL=cartwidget.css.map */

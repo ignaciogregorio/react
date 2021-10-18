@@ -1,9 +1,8 @@
 
 import './navbar.scss'
 import peakyLogo from '..//..//img/Peaky_Wines2.png'
-import hamburLogo from '..//..//img/menu.png'
-import { Cartwidget } from '../cartwidget/CartWidget'
-
+import { Cartwidget } from '../cartWidget/CartWidget'
+import React from 'react';
 
 
 
@@ -13,23 +12,18 @@ export const Navbar = () => {
 
     return (
         <div>
-            <nav className='peakyNav'>
-                <div className='peakyLogo'>
+            <nav className='navbar'>
+                <div className='navbar-logo'>
                     <img src={peakyLogo} alt=""/>
                 </div>
-                <div className='peakyTitle'>
-                    <h1>Peaky Wines</h1>
-                    <h3>Tu E-commerce de Bebidas</h3>
-                    <img src={hamburLogo} alt=""/>
-                </div>
-                <ul className='peakyMenu'>
+                <ul className='navbar-menu'>
                     <a href="index.html"><li>Home</li></a>
                     <a href="index.html"><li>Nosotros</li></a>
-                    <li className='peakyMenu__Productos'>Productos
-                        <ul className='peakyDropdown'>
-                            <li className='subMenu'>Vinos</li>
-                            <li className='subMenu'>Whisky</li>
-                            <li className='subMenu'>Tabacco</li>
+                    <li className='navbar-menu-items'>Productos
+                        <ul className='navbar-drowdown'>
+                            <li className='navbar-dropdown-items'>Vinos</li>
+                            <li className='navbar-dropdown-items'>Whisky</li>
+                            <li className='navbar-dropdown-items'>Tabacco</li>
                         </ul>
                     </li>
                     <a href="index.html"><li>Contacto</li></a>
