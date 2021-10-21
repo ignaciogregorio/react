@@ -2,6 +2,8 @@
 import { useState } from 'react/cjs/react.development'
 import '..//itemList/itemlist.scss'
 import  BaseDatos  from "..//..//BaseDatos.json";
+import { Itemcount } from '../itemCount/ItemCount';
+import { Loading } from '../Loading/Loading';
 
 
 
@@ -25,19 +27,18 @@ export const Itemlist = ()=>{
         }
     )
 
-
-
     return(
 
         <div className='container-itemList'>
-            {productos && productos.map((producto) =>(
-                <div>
-                    <img src={producto.image} alt="" />
-                    <h1>{producto.title}</h1>
-                    <span>{producto.price}</span>
-
+            {productos ? productos.map((producto) =>(
+                <div className='itemList-container' key={producto.id}>
+                    <img className='itemList-img' src={producto.image} alt="" height='500px' />
+                    <p className='itemList-titulo'>{producto.title}</p>
+                    <span className='itemList-price'>${producto.price}</span>
+                    <Itemcount stock = {producto.stock} initial='1' />
                 </div>
-            ))}
+            ))  : <Loading/>}
+            
         </div>
     )
 

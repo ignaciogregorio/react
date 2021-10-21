@@ -1,13 +1,15 @@
 .contenedor-itemcount {
-  display: inline-block;
   padding: 20px;
-  margin-left: 20px;
+  position: relative;
 }
 
 .qty-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .plus-button {
@@ -38,5 +40,7 @@
   text-transform: uppercase;
   font-weight: bolder;
   font-family: 'Montserrat', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=itemcount.css.map */
