@@ -5,8 +5,6 @@ import { Itemlistcontainer } from './components/itemListContainer/ItemListContai
 
 function App() {
 
-
-
   return (
     <div className="App">
       <header className="App-header">

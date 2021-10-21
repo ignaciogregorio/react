@@ -2,7 +2,6 @@
   display: inline-block;
   padding: 20px;
   margin-left: 20px;
-  border: 2px solid black;
 }
 
 .qty-button {
@@ -12,13 +11,13 @@
 }
 
 .plus-button {
-  background-color: green;
-  margin-right: 2em;
+  margin-left: 2em;
+  cursor: pointer;
 }
 
 .minus-button {
-  background-color: red;
-  margin-left: 2em;
+  margin-right: 2em;
+  cursor: pointer;
 }
 
 .add-button {
@@ -32,6 +31,12 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 8px;
-  margin-top: 5px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
 }
 /*# sourceMappingURL=itemcount.css.map */

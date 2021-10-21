@@ -22,7 +22,6 @@ export const Itemcount = ({stock, initial})=>{
                         <FontAwesomeIcon icon={faPlus} />
                     </i>
                 </div>
-                    <span style={{display: count > stock ? 'block': 'none'}} >Stock Insuficiente. Total Stock del item {stock} </span>
                 <div>
                     <button className='add-button'>Agregar Item</button>
                 </div>
