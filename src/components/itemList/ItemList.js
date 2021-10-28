@@ -12,9 +12,6 @@ export const Itemlist = ()=>{
 
     const[productos, setProductos] = useState(null)
 
-    
-
-
     const task = new Promise ((resolve) => {
         setTimeout(() => {
             resolve(BaseDatos)
@@ -38,7 +35,7 @@ export const Itemlist = ()=>{
                     <Itemcount stock = {producto.stock} initial='1' />
                 </div>
             ))  : <Loading/>}
-            
+
         </div>
     )
 

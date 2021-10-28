@@ -1,8 +1,17 @@
-.greeting {
+.itemList__contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.itemList__contenedor .greeting {
   font-size: 5rem;
   text-align: center;
   font-family: 'Bebas Neue', cursive;
-  margin-top: 1em;
   color: white;
   text-shadow: 1px 1px 10px black;
 }

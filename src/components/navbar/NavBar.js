@@ -11,25 +11,23 @@ export const Navbar = () => {
 
 
     return (
-        <div>
             <nav className='navbar'>
-                <div className='navbar-logo'>
+                <div className='navbar__logo'>
                     <img src={peakyLogo} alt=""/>
                 </div>
-                <ul className='navbar-menu'>
-                    <a href="index.html"><li>Home</li></a>
-                    <a href="index.html"><li>Nosotros</li></a>
-                    <li className='navbar-menu-items'>Productos
-                        <ul className='navbar-drowdown'>
-                            <li className='navbar-dropdown-items'>Vinos</li>
-                            <li className='navbar-dropdown-items'>Whisky</li>
-                            <li className='navbar-dropdown-items'>Tabacco</li>
+                <ul className='navbar__menu'>
+                    <li><a href="index.html"> </a> Home</li>
+                    <li> <a href="index.html"> </a>Nosotros</li>
+                    <li className='navbar__menu__items'>Productos
+                        <ul className='navbar__drowdown'>
+                            <li className='navbar__dropdown__items'>Vinos</li>
+                            <li className='navbar__dropdown__items'>Whisky</li>
+                            <li className='navbar__dropdown__items'>Tabacco</li>
                         </ul>
                     </li>
-                    <a href="index.html"><li>Contacto</li></a>
-                    <Cartwidget/>
+                    <li> <a href="index.html"> </a> Contacto</li>
                 </ul>
+                <Cartwidget/>
             </nav>
-        </div>
     )
 }

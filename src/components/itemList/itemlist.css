@@ -11,7 +11,7 @@
 }
 
 .itemList-container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 5px;
 }
 
@@ -26,9 +26,9 @@
 
 .itemList-container .itemList-titulo {
   text-align: center;
-  overflow: hidden;
   font-weight: bolder;
   font-family: 'Montserrat', sans-serif;
+  position: relative;
 }
 
 .itemList-container .itemList-price {
@@ -40,9 +40,10 @@
           justify-content: center;
 }
 
-.itemList-container:hover {
-  border: 3px solid black;
-  -webkit-transform: scale(0.95, 0.95);
-          transform: scale(0.95, 0.95);
+.itemList-img:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 /*# sourceMappingURL=itemlist.css.map */

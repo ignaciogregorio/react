@@ -9,9 +9,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        <Itemlistcontainer greeting='By Order of the Peaky Winers'/>
-
       </header>
+      <Itemlistcontainer greeting='By Order of the Peaky Winers'/>
     </div>
   );
 }
