@@ -20,14 +20,16 @@
         font-weight: bolder;
         display: flex;
         justify-content: center;
+        :hover{
+            color: white;
+            font-weight:bolder;
+            border-bottom: 1px solid white;
+
+        }
 
         a{
             color: white;
-            :hover{
-                border-bottom: 1px solid white;
-                color: white;
-                font-weight:bolder;
-            }
+
         }
         li{
             display: inline-block;
@@ -36,6 +38,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             cursor: pointer;
+
         }
         .navbar__menu__items:hover{
             border-bottom: 1px solid white;

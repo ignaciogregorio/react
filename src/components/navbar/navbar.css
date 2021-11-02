@@ -38,14 +38,14 @@
           justify-content: center;
 }
 
-.navbar .navbar__menu a {
-  color: white;
-}
-
-.navbar .navbar__menu a :hover {
-  border-bottom: 1px solid white;
+.navbar .navbar__menu :hover {
   color: white;
   font-weight: bolder;
+  border-bottom: 1px solid white;
+}
+
+.navbar .navbar__menu a {
+  color: white;
 }
 
 .navbar .navbar__menu li {
