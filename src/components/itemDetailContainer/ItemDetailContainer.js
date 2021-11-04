@@ -11,6 +11,7 @@ export const ItemDetailContainer = () => {
 
         const[item, setItem] = useState()
 
+
         useEffect(()=>{
             const loadJson = new Promise ((resolve)=>{
                 setTimeout(() => {
@@ -30,8 +31,6 @@ export const ItemDetailContainer = () => {
         <div>
             <ItemDetail item={item}/>
         </div>
-        
-
     )
 
 }

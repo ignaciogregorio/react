@@ -4,6 +4,7 @@ import '..//itemList/itemlist.scss'
 import  BaseDatos  from "..//..//BaseDatos.json";
 import { Itemcount } from '../itemCount/ItemCount';
 import { Loading } from '../Loading/Loading';
+import { useParams } from 'react-router';
 
 
 
@@ -11,6 +12,7 @@ import { Loading } from '../Loading/Loading';
 export const Itemlist = ()=>{
 
     const[productos, setProductos] = useState(null)
+    const {id} = useParams()
 
     const task = new Promise ((resolve) => {
         setTimeout(() => {
@@ -20,9 +22,11 @@ export const Itemlist = ()=>{
 
     task.then(
         (result) => {
-            setProductos(result)
+            setProductos(result.find(product => product.id === Number(id)))
         }
     )
+
+
 
     return(
 

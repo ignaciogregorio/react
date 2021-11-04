@@ -2,22 +2,29 @@
 import './scss/app.scss';
 /* import { BrowserRouter, Switch, Route } from "react-router-dom"; */
 import { Navbar } from './components/navBar/NavBar';
-
 import { Itemlistcontainer } from './components/itemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
 
   return (
 
-          <div className="App">
-            <header className="App-header">
-              <Navbar />
-            </header>
-              <Itemlistcontainer greeting='By Order of the Peaky Winers'/>
-
-              <ItemDetailContainer/>
-          </div>
+            <BrowserRouter>
+                <div className="App">
+                    <header className="App-header">
+                      <Navbar />
+                    </header>
+                  <Switch>
+                      <Route exact path='/category/:id'>
+                        <Itemlistcontainer greeting='By Order of the Peaky Winers'/>
+                      </Route>
+                      <Route path='/item/:id'>
+                        <ItemDetailContainer/>
+                      </Route>
+                  </Switch>
+                </div>
+            </BrowserRouter>
   );
 }
 

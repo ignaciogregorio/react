@@ -9,7 +9,7 @@ export const ItemDetail = ({item} ) =>{
 
     return(
         <>
-        {item ?  <div className='itemDetail-container'>
+        {item ?  <div className='itemDetail-container' key={item.id}>
             <img className='itemDetail-img' src={item.image} alt="" />
             <div className='itemDetail-description'>
                     <div className='itemDetail-title'>{item.title}</div>
