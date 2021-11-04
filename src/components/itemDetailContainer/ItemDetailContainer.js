@@ -23,14 +23,14 @@ export const ItemDetailContainer = () => {
 
             loadJson.then(
                 (res) => {
-                    setItem(res.filter(product => product.id === Number(id)))
+                    setItem(res.filter(product => product.id === id))
                 }
             )
 
         },[id])
 
 
-
+        console.log(item)
     return(
         <div>
             <ItemDetail item={item}/>
