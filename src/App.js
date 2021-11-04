@@ -16,11 +16,11 @@ function App() {
                       <Navbar />
                     </header>
                   <Switch>
-                      <Route exact path='/category/:id'>
-                        <Itemlistcontainer greeting='By Order of the Peaky Winers'/>
-                      </Route>
                       <Route path='/item/:id'>
                         <ItemDetailContainer/>
+                      </Route>
+                      <Route exact path='/category/:id'>
+                        <Itemlistcontainer greeting='By Order of the Peaky Winers'/>
                       </Route>
                   </Switch>
                 </div>

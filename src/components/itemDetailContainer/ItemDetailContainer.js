@@ -3,6 +3,7 @@ import './itemDetailContainer.scss'
 import  BaseDatos  from "..//..//BaseDatos.json";
 import { ItemDetail } from '../itemDetail/ItemDetail';
 import { useEffect } from 'react';
+import { useParams } from 'react-router';
 
 
 
@@ -10,6 +11,7 @@ export const ItemDetailContainer = () => {
 
 
         const[item, setItem] = useState()
+        const {id} = useParams()
 
 
         useEffect(()=>{
@@ -21,11 +23,13 @@ export const ItemDetailContainer = () => {
 
             loadJson.then(
                 (res) => {
-                    setItem(res[0])
+                    setItem(res.filter(product => product.id === Number(id)))
                 }
             )
 
-        },[])
+        },[id])
+
+
 
     return(
         <div>
