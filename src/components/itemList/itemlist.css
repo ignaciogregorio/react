@@ -8,42 +8,6 @@
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.itemList-container {
-  /* border: 1px solid black; */
-  margin: 5px;
-}
-
-.itemList-container .itemList-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.itemList-container .itemList-titulo {
-  text-align: center;
-  font-weight: bolder;
-  font-family: 'Montserrat', sans-serif;
-  position: relative;
-}
-
-.itemList-container .itemList-price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.itemList-img:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+  margin-top: 10%;
 }
 /*# sourceMappingURL=itemlist.css.map */

@@ -11,5 +11,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 /*# sourceMappingURL=app.css.map */

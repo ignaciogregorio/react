@@ -41,7 +41,7 @@
 .navbar .navbar__menu :hover {
   color: white;
   font-weight: bolder;
-  border-bottom: 1px solid white;
+  text-decoration: underline;
 }
 
 .navbar .navbar__menu a {
@@ -57,8 +57,11 @@
   cursor: pointer;
 }
 
+.navbar .navbar__menu li .navbar-li {
+  text-decoration: none;
+}
+
 .navbar .navbar__menu .navbar__menu__items:hover {
-  border-bottom: 1px solid white;
   color: white;
   font-weight: bolder;
 }
@@ -76,15 +79,14 @@
   text-align: center;
 }
 
-.navbar .navbar__menu .navbar__drowdown .navbar__dropdown__items:hover {
-  border-bottom: 1px solid white;
-  width: 100%;
-  color: white;
-}
-
-.navbar .navbar__menu .navbar__dropdown__items {
+.navbar .navbar__menu .navbar-links {
+  text-decoration: none;
   display: block;
   margin-left: -30px;
   padding: 10px;
+}
+
+.navbar .navbar__menu .navbar-links :hover {
+  color: white;
 }
 /*# sourceMappingURL=navbar.css.map */

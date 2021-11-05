@@ -2,10 +2,11 @@
 import { useState } from 'react/cjs/react.development'
 import '..//itemList/itemlist.scss'
 import  BaseDatos  from "..//..//BaseDatos.json";
-import { Itemcount } from '../itemCount/ItemCount';
 import { Loading } from '../Loading/Loading';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router';
+import { Item } from '../item/Item';
 
 
 
@@ -13,7 +14,8 @@ import { Link } from 'react-router-dom';
 export const Itemlist = ()=>{
 
     const[productos, setProductos] = useState(null)
-    
+    const{category} = useParams()
+
     useEffect(()=>{
 
         const task = new Promise ((resolve) => {
@@ -21,25 +23,29 @@ export const Itemlist = ()=>{
                 resolve(BaseDatos)
             }, 4000);
         })
-    
+
         task.then(
-            (result) => {
-                setProductos(result)
+            (result) =>
+                {category?
+                setProductos(result.filter(products => products.category === category)): setProductos(result)
             }
         )
 
-    }, [])
+    }, [category])
+
+
 
     return(
-        
+
         <div className='container-itemList'>
             {productos ? productos.map((producto) =>(
-                <div className='itemList-container' key={producto.id}>
-                    <Link to={`/item/${producto.id}`}><img className='itemList-img' src={producto.image} alt="" height='500px' /></Link>
-                    <p className='itemList-titulo'>{producto.title}</p>
-                    <span className='itemList-price'>${producto.price}</span>
-                    <Itemcount stock = {producto.stock} initial='1' />
-                </div>
+                <NavLink className='navlink-item'  to={`/item/${producto.id}`}>
+                    <Item
+                        id={producto.id}
+                        title={producto.title}
+                        price={producto.price}
+                        image={producto.image}/>
+                </NavLink>
             ))  : <Loading/>}
 
         </div>

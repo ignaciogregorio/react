@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Itemcount } from '../itemCount/ItemCount'
 import { Loading } from '../Loading/Loading'
 import './itemDetail.scss'
@@ -5,10 +6,11 @@ import './itemDetail.scss'
 export const ItemDetail = ({item} ) =>{
 
 
- 
+
 
     return(
         <>
+        <Link to={"/"}><button>Back</button></Link>
         {item ?  <div className='itemDetail-container' key={item.id}>
             <img className='itemDetail-img' src={item.image} alt="" />
             <div className='itemDetail-description'>

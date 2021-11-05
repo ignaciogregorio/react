@@ -9,18 +9,11 @@ export const Item = ({id, title, price, image}) => {
 
 
     return(
-       <div className='container-item' >{id}
-           <div className='container-img'>
-               <img src={image} alt="" />
-           </div>
-           <p className='container-titulo'>
-               {title}
-           </p>
-           <p className='container-precio'>
-               {price}
-           </p>
-       </div>
-
+        <div className='item-container' key={id}>
+            <img className='item-img' src={image} alt="" height='500px' />
+            <p className='item-titulo'>{title}</p>
+            <span className='item-price'>${price}</span>
+        </div>
     )
 
 }
