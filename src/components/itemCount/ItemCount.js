@@ -3,13 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import './itemcount.scss'
 
-export const Itemcount = ({stock, initial})=>{
+export const Itemcount = ({stock, initial, cantidad})=>{
 
     const [count, setCount] = useState(parseInt(initial))
 
-    const add = ()=>{setCount(count+1) }
-    const rest = ()=>{setCount(count-1) }
 
+    const add = ()=>{setCount(count+1) }
+    const rest = ()=>{
+        setCount(count-1) }
+
+    const onAdd = () => {
+        cantidad(count)
+
+    }
 
     return(
         <div className='contenedor-itemcount'>
@@ -23,7 +29,7 @@ export const Itemcount = ({stock, initial})=>{
                     </i>
                 </div>
                 <div>
-                    <button className='add-button'>Agregar Item</button>
+                    <button onClick={onAdd} className='add-button'>Agregar Item</button>
                 </div>
         </div>
 
