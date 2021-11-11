@@ -5,11 +5,12 @@ import { Itemlistcontainer } from './components/itemListContainer/ItemListContai
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Itemlist } from './components/itemList/ItemList';
+import { CartProvider } from './context/CartContext';
 
 function App() {
 
   return (
-
+    <CartProvider>
             <BrowserRouter>
                 <div className="App">
                     <header className="App-header">
@@ -28,6 +29,7 @@ function App() {
                   </Switch>
                 </div>
             </BrowserRouter>
+      </CartProvider>
   );
 }
 

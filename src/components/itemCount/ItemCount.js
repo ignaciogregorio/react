@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import './itemcount.scss'
 
+
 export const Itemcount = ({stock, initial, cantidad})=>{
+
 
     const [count, setCount] = useState(parseInt(initial))
 
@@ -14,7 +16,6 @@ export const Itemcount = ({stock, initial, cantidad})=>{
 
     const onAdd = () => {
         cantidad(count)
-
     }
 
     return(
