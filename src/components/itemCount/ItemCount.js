@@ -30,7 +30,7 @@ export const Itemcount = ({stock, initial, cantidad})=>{
                     </i>
                 </div>
                 <div>
-                    <button onClick={onAdd} className='add-button'>Agregar Item</button>
+                    <button onClick={onAdd} className='add-button'>Agregar Cantidades</button>
                 </div>
         </div>
 

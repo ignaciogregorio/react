@@ -18,7 +18,7 @@ export const ItemDetail = ({item} ) =>{
         setQtyitems(counter)
         setFlag(false)
     }
-
+    console.log(qtyitems)
     return(
         <>
         {item ?  <div className='itemDetail-container' key={item.id}>
@@ -30,7 +30,7 @@ export const ItemDetail = ({item} ) =>{
                     {flag ? <Itemcount initial='0' stock={item.stock} cantidad={agrego}/> :
                     <div className='itemDetail-add'>
                         <span>HAS AGREGADO {qtyitems} items de {item.title}</span>
-                        <NavLink onClick={addItemToCart} className='itemDetail-buttons' to='/cart'>Finalizar Compra</NavLink>
+                        <NavLink onClick={() => addItemToCart(item,qtyitems)} className='itemDetail-buttons' to='/cart'>Agregar Items</NavLink>
                         <NavLink className='itemDetail-buttons' to='/'>Seguir Comprando</NavLink>
                     </div>
                     }

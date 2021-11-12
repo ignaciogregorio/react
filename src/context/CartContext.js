@@ -10,17 +10,21 @@ export const CartProvider = ({children}) =>{
 
     const [cart, setCart]= useState([])
 
-    const addItemToCart = (item) =>{
-        setCart([...cart, item])
-        console.log(cart)
-
+    const addItemToCart = (item, quantity) =>{
+        const producto = {id: item.id, title: item.title, price: item.price, quantity: quantity, image:item.image}
+        isIn(item.id) ?
+        alert('producto ya agregado'):
+        setCart([...cart, producto])
     }
-    const removeItem = (item)=>{
-        // remover item del array y setear el cart
+    const removeItem = (itemId)=>{
+        const deleteItem = cart.filter( item => item.id !== itemId)
+        setCart(deleteItem)
     }
+    const isIn = (id) => cart.some(item => item.id === id)
 
+    console.log(cart)
     return(
-        <CartContext.Provider value={{cart, addItemToCart, removeItem}}>
+        <CartContext.Provider value={{cart, addItemToCart, removeItem, isIn}}>
             {children}
         </CartContext.Provider>
     )

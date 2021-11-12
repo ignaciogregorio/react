@@ -21,7 +21,7 @@ export const Itemlist = ()=>{
         const task = new Promise ((resolve) => {
             setTimeout(() => {
                 resolve(BaseDatos)
-            }, 4000);
+            }, 2000);
         })
 
         task.then(
