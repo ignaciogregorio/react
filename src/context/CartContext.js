@@ -10,10 +10,13 @@ export const CartProvider = ({children}) =>{
 
     const [cart, setCart]= useState([])
 
+
     const addItemToCart = (item, quantity) =>{
-        const producto = {id: item.id, title: item.title, price: item.price, quantity: quantity, image:item.image}
-        isIn(item.id) ?
-        alert('producto ya agregado'):
+        const producto = {...item, quantity: quantity}
+
+        // comento esto, para trata de hacer funcionar el count en Cart//
+/*         isIn(item.id) ?
+        alert('producto ya agregado'): */
         setCart([...cart, producto])
     }
     const removeItem = (itemId)=>{
@@ -22,7 +25,7 @@ export const CartProvider = ({children}) =>{
     }
     const isIn = (id) => cart.some(item => item.id === id)
 
-    console.log(cart)
+
     return(
         <CartContext.Provider value={{cart, addItemToCart, removeItem, isIn}}>
             {children}

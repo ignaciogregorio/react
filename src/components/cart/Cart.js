@@ -1,4 +1,6 @@
+
 import { useCart } from '../../context/CartContext'
+import { Itemcount } from '../itemCount/ItemCount'
 import './cart.scss'
 
 
@@ -6,33 +8,46 @@ export const Cart = () =>{
 
     const {cart, removeItem } = useCart()
 
+    const totalPago = cart.reduce((total, item) => {
+        return total + item.price * item.quantity
+    },0)
+
+
 
     return(
         <>
-            <table className='cart-table'>
-                <tr className='cart-header'>
-                    <td>Imagen</td>
-                    <td>Cantidad</td>
-                    <td>Nombre</td>
-                    <td>Precio</td>
-                </tr>
-            </table>
+            {
+                cart.length !== 0 ?
 
-
-            {cart.map((item) =>(
-                <>
-                <tr className='cart-info'>
-                    <td><img src={item.image} alt="" height='50px' /></td>
-                    <td>{item.quantity}</td>
-                    <td>{item.title}</td>
-                    <td>{item.price}</td>
-                    <td><button onClick={()=>(removeItem(item.id))}>X</button></td>
-                </tr>
-
-                </>
-
-            ) )}
-
+                cart.map((item) =>(
+                    <>
+                    <article className='cart-item-container' >
+                            <div className='cart-image-container'>
+                                <img className='cart-image' src={item.image} alt="" />
+                            </div>
+                            <div className='cart-info'>
+                                <div>{item.title}</div>
+                                <div>x {item.quantity}</div>
+                                <div>${item.price * item.quantity} </div>
+                            </div>
+                            <div className='cart-buttons'>
+                                <Itemcount initial={item.quantity} showBtn={false}/>
+                                <button onClick={()=>(removeItem(item.id))}>Eliminar</button>
+                            </div>
+                    </article>
+                    <hr />
+                    </>
+                ) ):
+                <div className='cart-message'>
+                    <p>No hay Items en el Carrito</p>
+                </div>
+            }
+                {cart.length !== 0 ?
+                    <div className='cart-total' >
+                        <h2>Total a Pagar: ${totalPago}</h2>
+                    </div>
+                    : <button>Volver al Inicio</button>
+                }
         </>
     )
 }

@@ -1,6 +1,7 @@
 
 .carrito{
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     margin-right: 10px;
     
@@ -10,5 +11,12 @@
         width: 2rem;
         mask: url(..//..//img/cart-plus-solid.svg) no-repeat center center;
         -webkit-mask: url(..//..//img/cart-plus-solid.svg) no-repeat center center;
+    }
+    .total-items{
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        margin: 27px;
+
     }
 }
