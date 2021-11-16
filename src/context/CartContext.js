@@ -20,14 +20,16 @@ export const CartProvider = ({children}) =>{
             const producto = {...item, counter: quantity}
             setCart([...cart, producto])
         }else{
+            const newCart = [...cart]
             const duplicado =  cart.find((product) => product.id === item.id)
 
             duplicado.counter = duplicado.counter + quantity
-            setCart([...cart])
+            setCart([...newCart])
         }
 
 
     }
+    console.log(cart)
     const removeItem = (itemId)=>{
         const deleteItem = cart.filter( item => item.id !== itemId)
         setCart(deleteItem)
