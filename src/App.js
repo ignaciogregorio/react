@@ -14,12 +14,10 @@ function App() {
     <CartProvider>
             <BrowserRouter>
                 <div className="App">
-                    <header className="App-header">
                       <Navbar />
-                    </header>
                   <Switch>
                       <Route exact path='/' component={Itemlistcontainer}>
-                        <Itemlistcontainer greeting='By Order of the Peaky Winers'/>
+                        <Itemlistcontainer/>
                       </Route>
                       <Route path='/item/:id'>
                         <ItemDetailContainer/>

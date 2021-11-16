@@ -11,7 +11,7 @@ export const ItemDetail = ({item} ) =>{
 
     const {addItemToCart} = useCart()
 
-    const [qtyitems, setQtyitems] = useState(0)
+    const [qtyitems, setQtyitems] = useState(1)
     const [flag, setFlag] = useState(true)
 
     const agrego = (counter) => {
@@ -30,7 +30,7 @@ export const ItemDetail = ({item} ) =>{
                     <div>${item.price}</div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis rem doloribus dolorum eius possimus voluptates reiciendis velit repellendus quasi placeat ad nesciunt voluptas accusantium, suscipit quam! Impedit numquam non ratione.</p>
                     
-                    {flag ? <Itemcount initial='1' stock={item.stock} cantidad={agrego}/> : <div className='itemDetail-add'>
+                    {flag ? <Itemcount initial={qtyitems} stock={item.stock} cantidad={agrego}/> : <div className='itemDetail-add'>
                         <NavLink className='itemDetail-buttons' to='/cart'>ir al Carrito</NavLink>
                         <NavLink className='itemDetail-buttons' to='/'>Seguir Comprando</NavLink>
                     </div>}

@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 import { Itemcount } from '../itemCount/ItemCount'
 import './cart.scss'
@@ -9,7 +10,7 @@ export const Cart = () =>{
     const {cart, removeItem } = useCart()
 
     const totalPago = cart.reduce((total, item) => {
-        return total + item.price * item.quantity
+        return total + item.price * item.counter
     },0)
 
 
@@ -27,11 +28,11 @@ export const Cart = () =>{
                             </div>
                             <div className='cart-info'>
                                 <div>{item.title}</div>
-                                <div>x {item.quantity}</div>
-                                <div>${item.price * item.quantity} </div>
+                                <div>x {item.counter}</div>
+                                <div>${item.price * item.counter} </div>
                             </div>
                             <div className='cart-buttons'>
-                                <Itemcount initial={item.quantity} showBtn={false}/>
+{/*                                 <Itemcount initial={item.counter} showBtn={false}/> */}
                                 <button onClick={()=>(removeItem(item.id))}>Eliminar</button>
                             </div>
                     </article>
@@ -46,7 +47,7 @@ export const Cart = () =>{
                     <div className='cart-total' >
                         <h2>Total a Pagar: ${totalPago}</h2>
                     </div>
-                    : <button>Volver al Inicio</button>
+                    : <Link to='/'><button>Volver al Inicio</button></Link>
                 }
         </>
     )

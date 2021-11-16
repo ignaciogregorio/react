@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { Item } from '../item/Item';
+import { collection, getDoc, getDocs, getFirestore, query } from '@firebase/firestore';
 
 
 
@@ -18,6 +19,25 @@ export const Itemlist = ()=>{
 
     useEffect(()=>{
 
+        // probando firebase
+/*         const db = getFirestore()
+
+
+        const q = query(
+            collection(db, "items")
+        )
+        getDocs(q).then((snapshot) =>{
+            setProductos(
+                snapshot.docs.map((doc)=>{
+                    const newDoc = { ...doc.data(), id: doc.id}
+                    return newDoc
+                })
+            )
+        })},[category]) */
+
+
+
+        //comento como se cargaba antes de usar
         const task = new Promise ((resolve) => {
             setTimeout(() => {
                 resolve(BaseDatos)

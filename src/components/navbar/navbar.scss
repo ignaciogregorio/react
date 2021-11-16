@@ -1,5 +1,5 @@
 .navbar{
-    background-color:rgba(144, 0, 31, 0.626) ;
+    background-color:rgb(144, 0, 31) ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -11,7 +11,7 @@
         top: 20%;
         align-self: center;
         img{
-            height: 20em;
+            height: 15em;
         }
     }
     .navbar__menu{

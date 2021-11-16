@@ -4,7 +4,8 @@ import  BaseDatos  from "..//..//BaseDatos.json";
 import { ItemDetail } from '../itemDetail/ItemDetail';
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
-
+import { getFirestore } from "..//..//firebase";
+import { doc, getDoc} from '@firebase/firestore';
 
 
 
@@ -13,6 +14,20 @@ export const ItemDetailContainer = () => {
 
         const[item, setItem] = useState()
         const {id} = useParams()
+
+// probando firebase
+/*         useEffect(()=>{
+
+            const db = getFirestore()
+            const oneItem = doc(db, "items", id)
+
+            getDoc(oneItem).then((snapshot) =>{
+                if(snapshot.exists()){
+                    setItem(
+                    snapshot.data())}
+                    })
+
+            },[id]) */
 
 
         useEffect(()=>{

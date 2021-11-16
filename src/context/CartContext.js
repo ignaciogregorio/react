@@ -12,22 +12,32 @@ export const CartProvider = ({children}) =>{
 
 
     const addItemToCart = (item, quantity) =>{
-        const producto = {...item, quantity: quantity}
+        const isInCart = cart.some((product) => product.id === item.id)
+        
 
         // comento esto, para trata de hacer funcionar el count en Cart//
-/*         isIn(item.id) ?
-        alert('producto ya agregado'): */
-        setCart([...cart, producto])
+        if(!isInCart){
+            const producto = {...item, counter: quantity}
+            setCart([...cart, producto])
+        }else{
+            const duplicado =  cart.find((product) => product.id === item.id)
+
+            duplicado.counter = duplicado.counter + quantity
+            setCart([...cart])
+        }
+
+
     }
     const removeItem = (itemId)=>{
         const deleteItem = cart.filter( item => item.id !== itemId)
         setCart(deleteItem)
     }
-    const isIn = (id) => cart.some(item => item.id === id)
+    
+    
 
 
     return(
-        <CartContext.Provider value={{cart, addItemToCart, removeItem, isIn}}>
+        <CartContext.Provider value={{cart, addItemToCart, removeItem}}>
             {children}
         </CartContext.Provider>
     )

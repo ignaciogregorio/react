@@ -9,7 +9,7 @@ export const Cartwidget = ()=>{
     const {cart } = useCart()
 
     const totalItem = cart.reduce((total, item)=>{
-        return total + item.quantity
+        return total + item.counter
     },0)
 
     return(
