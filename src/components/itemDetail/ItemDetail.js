@@ -29,7 +29,7 @@ export const ItemDetail = ({item} ) =>{
                     <div className='itemDetail-title'>{item.title}</div>
                     <div>${item.price}</div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis rem doloribus dolorum eius possimus voluptates reiciendis velit repellendus quasi placeat ad nesciunt voluptas accusantium, suscipit quam! Impedit numquam non ratione.</p>
-                    
+
                     {flag ? <Itemcount initial={qtyitems} stock={item.stock} cantidad={agrego}/> : <div className='itemDetail-add'>
                         <NavLink className='itemDetail-buttons' to='/cart'>ir al Carrito</NavLink>
                         <NavLink className='itemDetail-buttons' to='/'>Seguir Comprando</NavLink>

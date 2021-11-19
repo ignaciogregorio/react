@@ -1,7 +1,6 @@
 
 import { Link } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
-import { Itemcount } from '../itemCount/ItemCount'
 import './cart.scss'
 
 

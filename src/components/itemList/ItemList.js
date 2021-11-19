@@ -1,13 +1,12 @@
 
 import { useState } from 'react/cjs/react.development'
 import '..//itemList/itemlist.scss'
-import  BaseDatos  from "..//..//BaseDatos.json";
 import { Loading } from '../Loading/Loading';
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { Item } from '../item/Item';
-import { collection, getDoc, getDocs, getFirestore, query } from '@firebase/firestore';
+import { collection, getDocs, getFirestore, query, where } from '@firebase/firestore';
 
 
 
@@ -15,17 +14,21 @@ import { collection, getDoc, getDocs, getFirestore, query } from '@firebase/fire
 export const Itemlist = ()=>{
 
     const[productos, setProductos] = useState(null)
-    const{category} = useParams()
+    const{categoryid} = useParams()
 
     useEffect(()=>{
 
-        // probando firebase
-/*         const db = getFirestore()
+    //FUNCIONA//
 
+        const db = getFirestore()
 
-        const q = query(
-            collection(db, "items")
-        )
+        // si existe la categoria, que filtre, sino que traiga todo
+        const q = categoryid ? query(
+            collection(db, "items"),
+            where("category", "==", categoryid),)
+
+            : collection(db, "items")
+
         getDocs(q).then((snapshot) =>{
             setProductos(
                 snapshot.docs.map((doc)=>{
@@ -33,12 +36,10 @@ export const Itemlist = ()=>{
                     return newDoc
                 })
             )
-        })},[category]) */
+        })},[categoryid])
 
-
-
-        //comento como se cargaba antes de usar
-        const task = new Promise ((resolve) => {
+        //comento como se cargaba antes de usar firebase
+ /*        const task = new Promise ((resolve) => {
             setTimeout(() => {
                 resolve(BaseDatos)
             }, 2000);
@@ -51,7 +52,7 @@ export const Itemlist = ()=>{
             }
         )
 
-    }, [category])
+    }, [category]) */
 
 
 
@@ -61,6 +62,7 @@ export const Itemlist = ()=>{
             {productos ? productos.map((producto) =>(
                 <NavLink className='navlink-item'  to={`/item/${producto.id}`}>
                     <Item
+                        key={producto.id}
                         id={producto.id}
                         title={producto.title}
                         price={producto.price}

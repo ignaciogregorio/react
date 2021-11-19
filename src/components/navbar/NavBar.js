@@ -11,9 +11,6 @@ import { NavLink } from 'react-router-dom';
 export const Navbar = () => {
 
 
-
-
-
     return (
             <nav className='navbar'>
                 <div className='navbar__logo'>
@@ -24,9 +21,9 @@ export const Navbar = () => {
                     <li><NavLink className='navbar-li' to='/nosotros' >Nosotros</NavLink></li>
                     <li className='navbar__menu__items'>Productos
                         <ul className='navbar__drowdown'>
-                        <NavLink className="navbar-links" to="/vino"> <li>Vinos</li></NavLink>
+                        <NavLink className="navbar-links" to="/vinos"> <li>Vinos</li></NavLink>
                         <NavLink className="navbar-links" to="/whisky"><li>Whisky</li></NavLink>
-                        <NavLink className="navbar-links" to="/tabaco"><li>Tabacco</li></NavLink>
+                        <NavLink className="navbar-links" to="/tabacco"><li>Tabacco</li></NavLink>
                         </ul>
                     </li>
                     <li> <NavLink className='navbar-li' to='/contacto' >Contacto</NavLink></li>

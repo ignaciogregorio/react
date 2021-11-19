@@ -1,35 +1,35 @@
-import { useState } from 'react/cjs/react.development'
+/* import { useState } from 'react/cjs/react.development */
 import './itemDetailContainer.scss'
-import  BaseDatos  from "..//..//BaseDatos.json";
 import { ItemDetail } from '../itemDetail/ItemDetail';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getFirestore } from "..//..//firebase";
-import { doc, getDoc} from '@firebase/firestore';
+import {doc, getDoc} from '@firebase/firestore';
 
 
 
 export const ItemDetailContainer = () => {
 
 
-        const[item, setItem] = useState()
-        const {id} = useParams()
+        const[item, setItem] = useState(null)
+        const {itemid} = useParams()
 
-// probando firebase
-/*         useEffect(()=>{
-
+        useEffect(()=>{
+            // cargo y le paso el ID
             const db = getFirestore()
-            const oneItem = doc(db, "items", id)
+            const oneItem = doc(db, 'items' , itemid )
 
-            getDoc(oneItem).then((snapshot) =>{
-                if(snapshot.exists()){
-                    setItem(
-                    snapshot.data())}
-                    })
+            getDoc(oneItem).then((snapshot) => {
 
-            },[id]) */
+                if (snapshot.exists()){
+                    setItem(snapshot.data(),)
+                }
+            })
+        }, [itemid])
 
-
+        console.log(item)
+/*
+como se cargaba antes de usar firebase
         useEffect(()=>{
             const loadJson = new Promise ((resolve)=>{
                 setTimeout(() => {
@@ -43,7 +43,7 @@ export const ItemDetailContainer = () => {
                 }
             )
 
-        },[id])
+        },[id]) */
 
 
     return(

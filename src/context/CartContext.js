@@ -13,7 +13,7 @@ export const CartProvider = ({children}) =>{
 
     const addItemToCart = (item, quantity) =>{
         const isInCart = cart.some((product) => product.id === item.id)
-        
+
 
         // comento esto, para trata de hacer funcionar el count en Cart//
         if(!isInCart){
@@ -26,16 +26,13 @@ export const CartProvider = ({children}) =>{
             duplicado.counter = duplicado.counter + quantity
             setCart([...newCart])
         }
-
-
     }
+    
     console.log(cart)
     const removeItem = (itemId)=>{
         const deleteItem = cart.filter( item => item.id !== itemId)
         setCart(deleteItem)
     }
-    
-    
 
 
     return(

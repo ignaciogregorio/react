@@ -19,10 +19,10 @@ function App() {
                       <Route exact path='/' component={Itemlistcontainer}>
                         <Itemlistcontainer/>
                       </Route>
-                      <Route path='/item/:id'>
+                      <Route path='/item/:itemid'>
                         <ItemDetailContainer/>
                       </Route>
-                      <Route exact path="/:category">
+                      <Route path="/:categoryid">
                         <Itemlist/>
                       </Route>
                   </Switch>
