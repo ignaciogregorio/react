@@ -17,16 +17,9 @@ export const Navbar = () => {
                     <NavLink to={'/'}><img src={peakyLogo} alt=""/></NavLink>
                 </div>
                 <ul className='navbar__menu'>
-                    <li><NavLink className='navbar-li' to='/home' >Home</NavLink></li>
-                    <li><NavLink className='navbar-li' to='/nosotros' >Nosotros</NavLink></li>
-                    <li className='navbar__menu__items'>Productos
-                        <ul className='navbar__drowdown'>
-                        <NavLink className="navbar-links" to="/vinos"> <li>Vinos</li></NavLink>
-                        <NavLink className="navbar-links" to="/whisky"><li>Whisky</li></NavLink>
-                        <NavLink className="navbar-links" to="/tabacco"><li>Tabacco</li></NavLink>
-                        </ul>
-                    </li>
-                    <li> <NavLink className='navbar-li' to='/contacto' >Contacto</NavLink></li>
+                    <li><NavLink className='navbar-li' to='/vinos' >Vinos</NavLink></li>
+                    <li><NavLink className='navbar-li' to='/whisky' >Whisky</NavLink></li>
+                    <li><NavLink className='navbar-li' to='/tabacco' >Tabacco</NavLink></li>
                 </ul>
                 <Cartwidget/>
             </nav>

@@ -19,32 +19,20 @@ export const ItemDetailContainer = () => {
             const db = getFirestore()
             const oneItem = doc(db, 'items' , itemid )
 
-            getDoc(oneItem).then((snapshot) => {
 
-                if (snapshot.exists()){
-                    setItem(snapshot.data(),)
-                }
-            })
+//SIMULO RETRASO PARA USAR LOADER//
+            setTimeout(() => {
+                getDoc(oneItem).then((snapshot) => {
+
+                    if (snapshot.exists()){
+                        setItem(snapshot.data(),)
+                    }
+                })
+                
+            }, 1000);
+
+            
         }, [itemid])
-
-        console.log(item)
-/*
-como se cargaba antes de usar firebase
-        useEffect(()=>{
-            const loadJson = new Promise ((resolve)=>{
-                setTimeout(() => {
-                    resolve(BaseDatos)
-                }, 2000)
-            })
-
-            loadJson.then(
-                (res) => {
-                    setItem(res.find(product => product.id === id))
-                }
-            )
-
-        },[id]) */
-
 
     return(
         <div>

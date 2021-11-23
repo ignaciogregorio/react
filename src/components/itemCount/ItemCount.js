@@ -43,7 +43,7 @@ export const Itemcount = ({stock, initial, cantidad, item, showBtn = true})=>{
                         <FontAwesomeIcon icon={faPlus} />
                     </i>
                 </div>
-                <div>
+                <div className='qty-button'>
                     {showBtn &&
                     <button onClick={onAdd} className='add-button'>Agregar Item</button>
                     }

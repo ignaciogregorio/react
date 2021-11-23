@@ -20,8 +20,9 @@ export const Cart = () =>{
                 cart.length !== 0 ?
 
                 cart.map((item) =>(
+
                     <>
-                    <article className='cart-item-container' >
+                    <article key={item.id} className='cart-item-container'>
                             <div className='cart-image-container'>
                                 <img className='cart-image' src={item.image} alt="" />
                             </div>
@@ -31,7 +32,6 @@ export const Cart = () =>{
                                 <div>${item.price * item.counter} </div>
                             </div>
                             <div className='cart-buttons'>
-{/*                                 <Itemcount initial={item.counter} showBtn={false}/> */}
                                 <button onClick={()=>(removeItem(item.id))}>Eliminar</button>
                             </div>
                     </article>
@@ -45,9 +45,11 @@ export const Cart = () =>{
                 {cart.length !== 0 ?
                     <div className='cart-total' >
                         <h2>Total a Pagar: ${totalPago}</h2>
+                        <Link to='/checkout'><button>Finalizar Compra</button></Link>
                     </div>
                     : <Link to='/'><button>Volver al Inicio</button></Link>
                 }
+
         </>
     )
 }

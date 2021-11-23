@@ -29,6 +29,8 @@ export const Itemlist = ()=>{
 
             : collection(db, "items")
 
+        setTimeout(() => {
+
         getDocs(q).then((snapshot) =>{
             setProductos(
                 snapshot.docs.map((doc)=>{
@@ -36,33 +38,18 @@ export const Itemlist = ()=>{
                     return newDoc
                 })
             )
-        })},[categoryid])
+        })}
+            
+        , 1000);
+    },[categoryid])
 
-        //comento como se cargaba antes de usar firebase
- /*        const task = new Promise ((resolve) => {
-            setTimeout(() => {
-                resolve(BaseDatos)
-            }, 2000);
-        })
-
-        task.then(
-            (result) =>
-                {category?
-                setProductos(result.filter(products => products.category === category)): setProductos(result)
-            }
-        )
-
-    }, [category]) */
-
-
-
+ 
     return(
 
         <div className='container-itemList'>
             {productos ? productos.map((producto) =>(
-                <NavLink className='navlink-item'  to={`/item/${producto.id}`}>
+                <NavLink className='navlink-item' key={producto.id}  to={`/item/${producto.id}`}>
                     <Item
-                        key={producto.id}
                         id={producto.id}
                         title={producto.title}
                         price={producto.price}
