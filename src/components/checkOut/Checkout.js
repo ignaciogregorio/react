@@ -8,6 +8,8 @@ import './checkout.scss'
 export const Checkout = () => {
 
     const {cart, cleanCart} = useCart()
+    const [flag, setFlag]= useState(true)
+    const [orden, setOrden]= useState(null)
 
     const inputs = [
         {
@@ -41,16 +43,17 @@ export const Checkout = () => {
       const onSubmit = () =>{
 
             const db = getFirestore()
-
             const ordersCollection = collection(db, "orders")
-
-            addDoc(ordersCollection, newOrder)
-
+            addDoc(ordersCollection, newOrder).then(({id}) => setOrden(id))
             cleanCart()
+            setFlag(false)
       }
+      
 
     return(
         <div>
+          {flag ?
+          <>
             <form className='checkout-form'>
                 {inputs.map((input)=> (
                     <div className='checkout-inputs' key={input.name}>
@@ -59,7 +62,7 @@ export const Checkout = () => {
                         value={form.name[input.name]}
                         name={input.name}
                         type="text"
-                        onChange={handleChange}   
+                        onChange={handleChange}
                         />
                     </div>
                 ))}
@@ -67,6 +70,8 @@ export const Checkout = () => {
             <button className='checkout-button' onClick={onSubmit}>
                 Confirmar
             </button>
+            </>
+          : <div>Su compra fue confirmado bajo el Numero de Orden: {orden}</div> }
         </div>
         )
 }
