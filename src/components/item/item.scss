@@ -1,13 +1,14 @@
-.container-item{
-    margin-left: 100px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
+
 
 
 .item-container{
-    margin: 5px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
     .item-img{
         display: flex;

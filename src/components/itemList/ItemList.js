@@ -56,7 +56,6 @@ export const Itemlist = ()=>{
                         image={producto.image}/>
                 </NavLink>
             ))  : <Loading/>}
-
         </div>
     )
 

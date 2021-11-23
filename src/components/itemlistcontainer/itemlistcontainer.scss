@@ -1,12 +1,7 @@
 .itemList__contenedor{
     display: flex;
     flex-direction: column;
-    .greeting{
-        font-size: 5rem;
-        text-align: center;
-        font-family: 'Bebas Neue', cursive;
-        color: white;
-        text-shadow: 1px 1px 10px black;
-    }
+    justify-content: center;
+
 }
 
