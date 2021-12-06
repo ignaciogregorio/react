@@ -6,11 +6,8 @@ import './cart.scss'
 
 export const Cart = () =>{
 
-    const {cart, removeItem } = useCart()
+    const {cart, removeItem, totalPago } = useCart()
 
-    const totalPago = cart.reduce((total, item) => {
-        return total + item.price * item.counter
-    },0)
 
 
 
@@ -21,8 +18,8 @@ export const Cart = () =>{
 
                 cart.map((item) =>(
 
-                    <>
-                    <article key={item.id} className='cart-item-container'>
+                    <div key={item.id} >
+                    <article  className='cart-item-container'>
                             <div className='cart-image-container'>
                                 <img className='cart-image' src={item.image} alt="" />
                             </div>
@@ -36,7 +33,7 @@ export const Cart = () =>{
                             </div>
                     </article>
                     <hr />
-                    </>
+                    </div>
                 ) ):
                 <div className='cart-message'>
                     <p>No hay Items en el Carrito</p>
@@ -45,9 +42,9 @@ export const Cart = () =>{
                 {cart.length !== 0 ?
                     <div className='cart-total' >
                         <h2>Total a Pagar: ${totalPago}</h2>
-                        <Link to='/checkout'><button>Finalizar Compra</button></Link>
+                        <Link to='/checkout' className='button-end-buy'><button >Finalizar Compra</button></Link>
                     </div>
-                    : <Link to='/'><button>Volver al Inicio</button></Link>
+                    : <Link to='/' className='cart-button-back-home'><button>Volver al Inicio</button></Link>
                 }
 
         </>

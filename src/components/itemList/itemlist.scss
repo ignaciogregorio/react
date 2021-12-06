@@ -1,8 +1,15 @@
 .container-itemList{
     display: grid;
-    grid-template-columns: repeat(auto-fill, 25em);
+    grid-template-columns: repeat(3, 25em);
     justify-content: center;
     margin-top: 10%;
     width: 100%;
+
+}
+
+.loader-container{
+    display: grid;
+    grid-column: 2/3;
+    justify-content: center;
 }
 

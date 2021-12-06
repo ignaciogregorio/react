@@ -6,13 +6,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.itemList__contenedor .greeting {
-  font-size: 5rem;
-  text-align: center;
-  font-family: 'Bebas Neue', cursive;
-  color: white;
-  text-shadow: 1px 1px 10px black;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=itemlistcontainer.css.map */

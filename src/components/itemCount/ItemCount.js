@@ -2,33 +2,27 @@ import {useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import './itemcount.scss'
-import { useCart } from '../../context/CartContext'
 
 
 
-export const Itemcount = ({stock, initial, cantidad, item, showBtn = true})=>{
+export const Itemcount = ({stock, initial, cantidad})=>{
 
-    const {addItemToCart } = useCart()
+
     const [count, setCount] = useState(parseInt(initial))
 
 
     const add = ()=>{
-        if(showBtn){
             setCount(count+1)
-        }else{
-            addItemToCart(item, 1)
-        }
+
     }
     const rest = ()=>{
-        if(!showBtn){
             setCount(count-1)
-        }else{
-            addItemToCart(item, -1)
-        }
+
     }
 
     const onAdd = () => {
         cantidad(count)
+        
     }
 
     return(
@@ -44,9 +38,7 @@ export const Itemcount = ({stock, initial, cantidad, item, showBtn = true})=>{
                     </i>
                 </div>
                 <div className='qty-button'>
-                    {showBtn &&
                     <button onClick={onAdd} className='add-button'>Agregar Item</button>
-                    }
                 </div>
         </div>
 

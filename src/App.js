@@ -17,6 +17,12 @@ function App() {
                 <div className="App">
                       <Navbar />
                   <Switch>
+                      <Route exact path='/cart'>
+                        <Cart/>
+                      </Route>
+                      <Route exact path='/checkout'>
+                        <Checkout/>
+                      </Route>
                       <Route exact path='/' component={Itemlistcontainer}>
                         <Itemlistcontainer/>
                       </Route>
@@ -27,12 +33,6 @@ function App() {
                         <Itemlist/>
                       </Route>
                   </Switch>
-                      <Route exact path='/cart'>
-                        <Cart/>
-                      </Route>
-                      <Route exact path='/checkout'>
-                        <Checkout/>
-                      </Route>
                 </div>
             </BrowserRouter>
       </CartProvider>

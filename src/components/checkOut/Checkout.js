@@ -1,5 +1,5 @@
 
-import { addDoc, collection, getFirestore } from '@firebase/firestore'
+import { addDoc, collection, getFirestore} from '@firebase/firestore'
 import { useState } from 'react/cjs/react.development'
 import { useCart } from '../../context/CartContext'
 import './checkout.scss'
@@ -7,7 +7,7 @@ import './checkout.scss'
 
 export const Checkout = () => {
 
-    const {cart, cleanCart} = useCart()
+    const {cart, cleanCart, totalPago} = useCart()
     const [flag, setFlag]= useState(true)
     const [orden, setOrden]= useState(null)
 
@@ -33,6 +33,7 @@ export const Checkout = () => {
 
       const newOrder = {
         form,
+        totalPago,
         cart
       }
 
@@ -48,7 +49,7 @@ export const Checkout = () => {
             cleanCart()
             setFlag(false)
       }
-      
+
 
     return(
         <div>
@@ -71,7 +72,11 @@ export const Checkout = () => {
                 Confirmar
             </button>
             </>
-          : <div>Su compra fue confirmado bajo el Numero de Orden: {orden}</div> }
+          :
+          <div className='checkout-detail'>
+              <p className='checkout-text'>Gracias por su compra. Su pedido esta siendo procesado bajo el Nro de Orden: <strong> {orden}.</strong></p>
+              <p className='checkout-text'>Una vez confirmada su compra, recibira un correo en:  <strong>{form.email}</strong></p>
+          </div> }
         </div>
         )
 }

@@ -18,8 +18,6 @@ export const Itemlist = ()=>{
 
     useEffect(()=>{
 
-    //FUNCIONA//
-
         const db = getFirestore()
 
         // si existe la categoria, que filtre, sino que traiga todo
@@ -29,21 +27,19 @@ export const Itemlist = ()=>{
 
             : collection(db, "items")
 
-        setTimeout(() => {
-
-        getDocs(q).then((snapshot) =>{
-            setProductos(
-                snapshot.docs.map((doc)=>{
-                    const newDoc = { ...doc.data(), id: doc.id}
-                    return newDoc
-                })
-            )
-        })}
-            
-        , 1000);
+            getDocs(q).then((snapshot) =>{
+                setProductos(
+                    snapshot.docs.map((doc)=>{
+                        const newDoc = { ...doc.data(), id: doc.id}
+                        return newDoc
+                    })
+                )
+            })
     },[categoryid])
 
- 
+
+
+
     return(
 
         <div className='container-itemList'>
@@ -55,7 +51,7 @@ export const Itemlist = ()=>{
                         price={producto.price}
                         image={producto.image}/>
                 </NavLink>
-            ))  : <Loading/>}
+            ))  : <div className='loader-container'><Loading/></div>}
         </div>
     )
 

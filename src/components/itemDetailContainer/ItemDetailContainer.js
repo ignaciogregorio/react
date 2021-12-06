@@ -19,19 +19,13 @@ export const ItemDetailContainer = () => {
             const db = getFirestore()
             const oneItem = doc(db, 'items' , itemid )
 
+    getDoc(oneItem).then((snapshot) => {
 
-//SIMULO RETRASO PARA USAR LOADER//
-            setTimeout(() => {
-                getDoc(oneItem).then((snapshot) => {
+        if (snapshot.exists()){
+            setItem(snapshot.data(),)
+        }
+    })
 
-                    if (snapshot.exists()){
-                        setItem(snapshot.data(),)
-                    }
-                })
-                
-            }, 1000);
-
-            
         }, [itemid])
 
     return(

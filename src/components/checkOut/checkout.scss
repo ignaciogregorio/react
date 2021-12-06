@@ -3,6 +3,7 @@
     flex-direction: column;
     align-content: center;
     position: relative;
+    margin-top: 150px;
 
     .checkout-inputs{
         display: flex;
@@ -35,4 +36,17 @@
         color: white;
 
     }
+}
+.checkout-detail{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40vh;
+    .checkout-text{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+    }
+
+
 }
