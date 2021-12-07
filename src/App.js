@@ -8,6 +8,7 @@ import { Itemlist } from './components/itemList/ItemList';
 import { CartProvider } from "./context/CartContext";
 import { Cart } from './components/cart/Cart';
 import { Checkout } from './components/checkOut/Checkout';
+import { Footer } from './components/footer/Footer';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
                         <Itemlist/>
                       </Route>
                   </Switch>
+                    <Footer/>
                 </div>
             </BrowserRouter>
       </CartProvider>

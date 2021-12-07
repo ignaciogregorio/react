@@ -1,0 +1,21 @@
+
+.footer-container{
+    background-color: brown;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .footer-socialMedia{
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        .instagram{
+            margin-right: 20px;
+            color: white;
+        }
+        .whatsapp{
+            margin-right: 20px;
+            color: white;
+        }
+    }
+}
