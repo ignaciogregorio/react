@@ -1,7 +1,7 @@
 
 import './scss/app.scss';
-import { Navbar } from './components/navBar/NavBar';
-import { Itemlistcontainer } from './components/itemListContainer/ItemListContainer';
+import { Navbar } from './components/navbar/NavBar';
+import { Itemlistcontainer } from './components/itemlistcontainer/ItemListContainer';
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Itemlist } from './components/itemList/ItemList';
